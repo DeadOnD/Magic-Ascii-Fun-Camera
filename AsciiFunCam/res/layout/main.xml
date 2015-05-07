@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/res-auto">
+<FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1" >
+
+    <SurfaceView
+        android:id="@+id/cameraView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <com.thilo.asciifuncam.OverlayView
+            android:id="@+id/overlayView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|center" />
+
+        <LinearLayout
+            android:id="@+id/verticalButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:visibility="visible" >
+
+            <com.thilo.asciifuncam.util.ShutterButton
+                android:id="@+id/shutterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:clickable="true"
+                android:src="@drawable/btn_camera_shutter_holo" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="8dp" />
+
+            <ImageButton
+                android:id="@+id/cycleColorButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:onClick="onClick_cycleColorMode"
+                android:src="@drawable/btn_color_full_color" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="8dp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:onClick="onClick_gotoPreferences"
+                android:src="@drawable/settings" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="8dp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:onClick="onClick_gotoGallery"
+                android:src="@drawable/gallery" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="8dp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:onClick="onClick_convertPicture"
+                android:src="@drawable/convert" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="8dp" />
+
+            <ImageButton
+                android:id="@+id/switchCameraButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:onClick="onClick_switchCamera"
+                android:src="@drawable/ic_switch_photo_facing_holo_light" />
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>
+        <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-5735264719731428/1962012345"
+         />
+
+</LinearLayout>
